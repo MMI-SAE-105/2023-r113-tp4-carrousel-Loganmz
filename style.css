@@ -8,16 +8,18 @@ img {
 }
 .carrousel_parent-ecrans {
     display: flex;
-    width: 100%;
+    width: 25%;
     overflow-x: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    
     
 }
 .carrousel_ecran {
     width: 100%;
     scroll-snap-align: start;
     flex: none;
+    
 }
 
 .carrousel_ecran figure {
@@ -25,6 +27,9 @@ img {
     scroll-snap-align: start; 
 }
 
+.carrousel_ecran figure figcaption {
+   display: none;
+}
 .carrousel {
     position: relative;
     display: flex;
@@ -35,11 +40,12 @@ img {
   
 .carrousel_btn {
     position: absolute;
+    
     top: 50%;
     transform: translateY(-50%);
     width: 2rem;
     height: 2rem;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgb(92, 92, 222)    ;
     border-radius: 50%;
     border: none;
     display: grid;
@@ -48,17 +54,109 @@ img {
 }
 
 .carrousel_btn-avant {
-    left: 0;
+    left: 35rem;
 }
 
 .carrousel_btn-apres {
-    right: 0;
+    right: 35rem;
 }
 .caroussel_liste-liens {
     display: flex;
     justify-content: center;
-    margin: 0;
+    margin: 30px ;
     padding: 0;
     list-style: none;
     gap: 1rem;
+    
+}
+a {
+    text-decoration: none;
+    color: white;
+    
+
+
+    
+    
+}
+.caroussel_liste-liens li {
+    padding: 15px;
+    background-color: #000;
+    border-radius: 30px;
+    font-family: "NunitoSans";
+    font-variation-settings:  "wght" 700, "wdth" 75, "opsz" 12, "YTLC" 540;
+    display: flex;
+    font-size: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in-out;
+    transition-duration: 0.5s;
+}
+.caroussel_liste-liens li:hover {
+    background-color: rgb(92, 92, 222);
+    font-variation-settings: "wght" 1000, "wdth" 105, "opsz" 12, "YTLC" 540;
+   
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    src: url("NunitoSans.woff2") format("woff2-variations");
+    font-display: swap;
+
+}
+@media (max-width: 1000px) {
+    .caroussel_liste-liens a{
+       font-size: 15px;
+    }
+    .caroussel_liste-liens li {
+        padding: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .carrousel_parent-ecrans {
+        display: flex;
+        width: 100%;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        
+        
+    }
+    .caroussel_liste-liens {
+        display: flex;
+        flex-direction: column
+    }
+    
+    .carrousel_btn-avant {
+        left: 0;
+    }
+
+    .carrousel_btn-apres {
+        right: 0;
+    }
+}
+
+@media (min-width: 1000px) {
+    .carrousel_btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        background: rgb(92, 92, 222)    ;
+        border-radius: 40%;
+        border: none;
+        color: #fff;
+    }
+    
+
+}
+::-webkit-scrollbar {
+    overflow: hidden;
+}
+    
+.caroussel_liste-liens li.actif {
+    background: rgb(92, 92, 222);
 }

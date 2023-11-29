@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="carrousel" x-data="{}">
-        <button  @click="$refs.parent.scrollLeft -= $refs.parent.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><</button>
-        <button @click="$refs.parent.scrollLeft += $refs.parent.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
+    <div class="carrousel" x-data="{hrefCourant: 1,}">
+        <div class="btn-all">
+            <button  @click="$refs.parent.scrollLeft -= $refs.parent.clientWidth; hrefCourant = Math.max(1, hrefCourant - 1)" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><</button>
+            <button @click="$refs.parent.scrollLeft += $refs.parent.clientWidth; hrefCourant = Math.max(5, hrefCourant + 1)" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
+        </div>
         <div class="carrousel_parent-ecrans" x-ref="parent">
             <div id="ecran-1" class="carrousel_ecran">
                 <figure>
@@ -44,11 +46,11 @@
             </div>
         </div>
         <ul class="caroussel_liste-liens">
-            <li><a href="#ecran-1" class="caroussel_lien">ecran 1</a></li>
-            <li><a href="#ecran-2" class="caroussel_lien">ecran 2</a></li>
-            <li><a href="#ecran-3" class="caroussel_lien">ecran 3</a></li>
-            <li><a href="#ecran-4" class="caroussel_lien">ecran 4</a></li>
-            <li><a href="#ecran-5" class="caroussel_lien">ecran 5</a></li>
+            <li :class="{actif:hrefCourant===1}" @click="hrefCourant = 1"><a href="#ecran-1" class="caroussel_lien" >ecran 1</a></li>
+            <li :class="{actif:hrefCourant===2}" @click="hrefCourant = 2"><a href="#ecran-2" class="caroussel_lien" >ecran 2</a></li>
+            <li :class="{actif:hrefCourant===3}" @click="hrefCourant = 3"><a href="#ecran-3" class="caroussel_lien" >ecran 3</a></li>
+            <li :class="{actif:hrefCourant===4}" @click="hrefCourant = 4"><a href="#ecran-4" class="caroussel_lien">ecran 4</a></li>
+            <li :class="{actif:hrefCourant===5}" @click="hrefCourant = 5"><a href="#ecran-5" class="caroussel_lien" >ecran 5</a></li>
         </ul>
     </div>
 </body>
