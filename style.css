@@ -9,4 +9,13 @@ img {
 .carrousel_parent-ecrans {
     display: flex;
     width: 100%;
+    overflow-x: scroll;
+}
+.carrousel_ecran {
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+.carrousel_ecran figure {
+    margin: 0;
 }
