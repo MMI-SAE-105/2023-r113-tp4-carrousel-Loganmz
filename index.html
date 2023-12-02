@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1 class="titre">Carrousel Responsive</h1>
     <div class="carrousel" x-data="{hrefCourant: 1,}">
         <div class="btn-all">
             <button  @click="$refs.parent.scrollLeft -= $refs.parent.clientWidth; hrefCourant = Math.max(1, hrefCourant - 1)" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><</button>
-            <button @click="$refs.parent.scrollLeft += $refs.parent.clientWidth; hrefCourant = Math.max(5, hrefCourant + 1)" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
+            <button @click="$refs.parent.scrollLeft += $refs.parent.clientWidth; hrefCourant = Math.max(1, hrefCourant + 1)" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
         </div>
         <div class="carrousel_parent-ecrans" x-ref="parent">
             <div id="ecran-1" class="carrousel_ecran">

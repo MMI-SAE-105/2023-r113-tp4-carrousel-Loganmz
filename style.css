@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    
 }
 
 img {
@@ -12,7 +13,8 @@ img {
     overflow-x: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    
+    box-shadow: #000 0px 0px 10px;
+    background-color: rgb(66, 66, 199);
     
 }
 .carrousel_ecran {
@@ -36,6 +38,7 @@ img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
   }
   
 .carrousel_btn {
@@ -159,4 +162,12 @@ a {
     
 .caroussel_liste-liens li.actif {
     background: rgb(92, 92, 222);
+}
+
+.titre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "NunitoSans";
+    font-variation-settings:  "wght" 700, "wdth" 75, "opsz" 12, "YTLC" 540;
 }
